@@ -1,10 +1,14 @@
 import './App.css'
+import Nav from './Componentes/Nav'
+import Reservas from './Componentes/Reservas'
 
 function App() {
+  
 
   return (
     <>
-      <a href="">Hola</a>
+      <Nav></Nav>
+      <Reservas></Reservas>
     </>
   )
 }
