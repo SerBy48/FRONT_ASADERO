@@ -2,7 +2,12 @@
 
 const Reservas = () => {
   return (
-    <h1>Perreo hpta</h1>
+    <div className="container">
+        <div>
+            <h1>Hola media noche</h1>
+        </div>
+        <p>Perreo de dioses</p>
+    </div>
   )
 }
 
