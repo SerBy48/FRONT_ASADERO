@@ -33,21 +33,21 @@ function Navbar() {
           <h2>Asadero <br /> <span>El Gallito</span></h2>
         </div>
         <div className={`links ${clicked ? 'active' : ''}`}>
-          <a onClick={handleClick} href="#h">Inicio</a>
-          <a onClick={handleClick} href="#h">Productos</a>
-          <a onClick={handleClick} href="#h">Reseñas</a>
-          <a onClick={handleClick} href="#h">Reservas</a>
-          <a onClick={handleClick} href="#h">Perfil</a>
+          <a onClick={handleClick} href="/">Inicio</a>
+          <a onClick={handleClick} href="/productos">Productos</a>
+          <a onClick={handleClick} href="/reseñas">Reseñas</a>
+          <a onClick={handleClick} href="/reservas">Reservas</a>
+          <a onClick={handleClick} href="/Perfil">Perfil</a>
         </div>
         <div className='burguer'>
           <BurguerButton clicked={clicked} handleClick={handleClick} />
         </div>
         <BgDiv className={`initial ${clicked ? ' active' : ''}`}>
-          <a onClick={handleClick} href="#h">Inicio</a>
-          <a onClick={handleClick} href="#h">Productos</a>
-          <a onClick={handleClick} href="#h">Reseñas</a>
-          <a onClick={handleClick} href="#h">Reservas</a>
-          <a onClick={handleClick} href="#h">Perfil</a>
+        <a onClick={handleClick} href="/">Inicio</a>
+          <a onClick={handleClick} href="/productos">Productos</a>
+          <a onClick={handleClick} href="/reseñas">Reseñas</a>
+          <a onClick={handleClick} href="/reservas">Reservas</a>
+          <a onClick={handleClick} href="/Perfil">Perfil</a>
         </BgDiv>
       </NavContainer>
     </>
