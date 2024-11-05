@@ -3,8 +3,8 @@ import './App.css'
 import Nav from './Componentes/Nav'
 import Reservas from './Componentes/Reservas'
 import Reseñas from './Componentes/Reseñas'
-import Inicio from './Componentes/inicio';
-import Productos from './Componentes/Producto';
+import Inicio from './Componentes/Inicio';
+import Productos from './Componentes/Productos';
 import Perfil from './Componentes/Api';
 
 function App() {
