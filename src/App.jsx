@@ -6,6 +6,8 @@ import Reseñas from './Componentes/Reseñas'
 import Inicio from './Componentes/Inicio';
 import Productos from './Componentes/Productos';
 import Perfil from './Componentes/Api';
+import Footer from './Componentes/Footer';
+
 
 function App() {
   
@@ -19,6 +21,7 @@ function App() {
         <Route path="/reservas" element={<Reservas />} />
         <Route path="/perfil" element={<Perfil />} />
     </Routes>
+    <Footer></Footer>
    </Router> 
   )
 }

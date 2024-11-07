@@ -1,0 +1,37 @@
+.footer {
+    padding: 2rem 1.5rem;
+    background-color: #FFC100;
+  }
+  
+  .footer .title {
+    margin-bottom: 1rem;
+  }
+  
+  .footer .menu-list a:hover {
+    color: #000;/* Color de hover amarillo */
+  }
+  
+  .social-icons a {
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #ffcf33; /* Hover amarillo para iconos sociales */
+  }
+  
+  .footer .has-text-centered {
+    margin-top: 1.5rem;
+  }
+  .social-icon:hover {
+    color: #ffcf33; /* Cambia a amarillo en hover */
+    transition: color 0.3s ease; /* Efecto de transición */
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  

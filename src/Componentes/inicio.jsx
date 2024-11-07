@@ -1,3 +1,4 @@
+import '../css/Inicio.css'
 
 const inicio = () => {
   return (
