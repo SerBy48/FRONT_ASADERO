@@ -1,0 +1,91 @@
+.carousel {
+  display: flex;
+  overflow: hidden;
+  width: 800px;
+  height: auto;
+  position: relative;
+}
+
+.carousel-item {
+  min-width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-navigation {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.button {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+}
+
+
+/* Estilo para los cuadros de novedades */
+
+
+
+.novedad-box {
+  width: 100%; /* Hacer que ocupe todo el ancho disponible */
+  max-width: 350px; /* Ancho máximo de los cuadros */
+  margin: 20px auto; /* Centrado horizontal y espacio entre los cuadros */
+  padding: 20px; /* Espaciado interno */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para que se destaquen */
+  border-radius: 10px; /* Bordes redondeados */
+  transition: transform 0.3s ease-in-out; /* Efecto al pasar el mouse */
+}
+
+.novedad-box:hover {
+  transform: scale(1.05); /* Agrandar un poco el cuadro cuando el mouse pasa sobre él */
+}
+
+/* Asegurarse de que la imagen se ajuste bien */
+.novedad-box img {
+  width: 100%;
+  height: 500px;
+  border-radius: 5px; /* Bordes redondeados para las imágenes */
+  margin-bottom: 15px; /* Espacio entre la imagen y el texto */
+}
+
+/* Estilo para el texto dentro del cuadro */
+.novedad-box .content {
+  padding: 10px 0; /* Espaciado interno */
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.novedad-box .content h3 {
+  font-size: 1.2rem; /* Aumentar el tamaño del título */
+  margin-bottom: 10px;
+}
+
+.novedad-box .content p {
+  font-size: 1rem; /* Ajustar el tamaño del texto */
+  color: #221c1c; /* Color más suave para el texto */
+  line-height: 1.5;
+}
+
+/* Botón "Saber más" */
+.novedad-box .button {
+  display: flex;
+  margin-top: 10px;
+  background-color: #d21c1c; /* Color de fondo del botón */
+  color: white;
+  border-radius: 5px;
+  padding: 10px 15px;
+  letter-spacing: 1px;
+}
+
+.novedad-box .button:hover {
+  background-color: #e68a00; /* Cambiar color al pasar el mouse */
+}
