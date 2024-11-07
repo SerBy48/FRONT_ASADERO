@@ -102,7 +102,8 @@ const NavContainer = styled.nav`
       color: white;
       text-decoration: none;
       position: relative;
-      padding: 0px 10px;
+      padding: 0px 20px;
+      margin:0px 10px;
       padding-bottom: 5px;
       transition: color 0.3s ease;
 
