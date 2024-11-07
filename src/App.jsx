@@ -9,7 +9,6 @@ import Perfil from './Componentes/Api';
 
 function App() {
   
-
   return (
    <Router>
     <Nav></Nav>
