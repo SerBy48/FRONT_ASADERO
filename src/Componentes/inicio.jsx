@@ -1,8 +1,8 @@
 
-const inicio = () => {
+const Inicio = () => {
   return (
     <div>Este es el inicio</div>
   )
 }
 
-export default inicio
+export default Inicio
