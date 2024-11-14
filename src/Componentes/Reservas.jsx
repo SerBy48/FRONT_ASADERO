@@ -24,25 +24,6 @@ const Reservas = () => {
           </div>
           <button className="btn">Más información</button>
         </div>
-
-
-        {/* Segundo contenedor */}
-        <div className="content">
-          <h2 className="title">
-            También celebramos con los niños<br />
-            <span>Su cumpleaños</span>
-          </h2>
-          <div className="media">
-            <img src={polloRegal} alt="Pollo de regalo" className="image" />
-            <div className="text">
-              <h3 className="subtitle">
-                Fotos con la mascota oficial<span>Una presa de tu elección!</span>
-              </h3>
-              <h2 className="description">¡¡ TOTALMENTE GRATIS !!</h2>
-            </div>
-          </div>
-          <button className="btn">Más información</button>
-        </div>
       </div>
 
 
