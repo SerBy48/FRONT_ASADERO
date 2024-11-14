@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import '../css/styles.css'; 
+import '../css/styles.css';
+import mesas from '../Img/mesasreseñas.jpeg';
 
 const Reseñas = () => {
   const [name, setName] = useState('');
@@ -17,7 +18,7 @@ const Reseñas = () => {
       alert("Por favor, elige una calificación de 1 a 5 estrellas.");
       return;
     }
-    const newReview = { name, lastName, tableNumber, email, comment, rating };
+    const newReview = { name, lastName, tableNumber, email, comment, rating, usefulCount: 0, notUsefulCount: 0 };
     setReviews([...reviews, newReview]);
     setName('');
     setLastName('');
@@ -34,114 +35,146 @@ const Reseñas = () => {
     setRating(star);
   };
 
+  const handleUsefulClick = (index) => {
+    const updatedReviews = [...reviews];
+    updatedReviews[index].usefulCount += 1;
+    setReviews(updatedReviews);
+  };
+
+  const handleNotUsefulClick = (index) => {
+    const updatedReviews = [...reviews];
+    updatedReviews[index].notUsefulCount += 1;
+    setReviews(updatedReviews);
+  };
+
+  const averageRating = (reviews.reduce((acc, review) => acc + review.rating, 0) / reviews.length).toFixed(1);
+
   return (
-    <div className="container">
-      <form onSubmit={handleSubmit} className="box">
-        <h3 className="title is-4 has-text-centered" style={{ color: '#C40C0C', fontSize: '32px', fontFamily: 'Roboto', lineHeight: '1.5' }}>Deja tu Reseña</h3>
+    <div className="container columns">
+      {/* Mapa de Mesas */}
+      <div className="column is-half">
+        <div className="box mesas-box">
+          <h3 className="mesa-title">MESAS</h3>
+          <img src={mesas} alt="pollo" className="mesas-image" />
+        </div>
+      </div>
 
-        {successMessage && <p className="has-text-success has-text-centered" style={{ fontSize: '14px', fontFamily: 'Roboto', lineHeight: '1.5' }}>¡Reseña enviada con éxito!</p>}
+      {/* Formulario de Reseña */}
+      <div className="column is-two-thirds">
+        <form onSubmit={handleSubmit} className="box">
+          <h3 className="form-title">Deja tu Reseña</h3>
 
-        <div className="field">
-          <input
-            className="input"
-            type="text"
-            placeholder="NOMBRE"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-            style={{ fontSize: '16px', fontFamily: 'Roboto', lineHeight: '1.5' }}
-          />
-        </div>
-        <div className="field">
-          <input
-            className="input"
-            type="text"
-            placeholder="APELLIDOS"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-            required
-            style={{ fontSize: '16px', fontFamily: 'Roboto', lineHeight: '1.5' }}
-          />
-        </div>
-        <div className="field">
-          <input
-            className="input"
-            type="number"
-            placeholder="NUMERO DE MESA"
-            value={tableNumber}
-            onChange={(e) => setTableNumber(e.target.value)}
-            required
-            style={{ fontSize: '16px', fontFamily: 'Roboto', lineHeight: '1.5' }}
-          />
-        </div>
-        <div className="field">
-          <input
-            className="input"
-            type="email"
-            placeholder="CORREO ELECTRONICO"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            style={{ fontSize: '16px', fontFamily: 'Roboto', lineHeight: '1.5' }}
-          />
-        </div>
-        <div className="field">
-          <textarea
-            className="textarea"
-            placeholder="COMENTARIO DEL LUGAR"
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
-            required
-            style={{ fontSize: '16px', fontFamily: 'Roboto', lineHeight: '1.5' }}
-          ></textarea>
-        </div>
+          {successMessage && <p className="has-text-success has-text-centered">¡Reseña enviada con éxito!</p>}
 
-        <div className="field">
-          <label className="label" style={{ fontSize: '24px', fontFamily: 'Roboto', lineHeight: '1.5', color: '#C40C0C' }}>Calificación</label>
-          <div className="control rating-stars">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <span
-                key={star}
-                style={{
-                  fontSize: '1.5rem',
-                  cursor: 'pointer',
-                  color: star <= rating ? '#FFD700' : '#ccc'
-                }}
-                onClick={() => handleStarClick(star)}
-              >
-                ★
-              </span>
-            ))}
+          <div className="field">
+            <input
+              className="input"
+              type="text"
+              placeholder="NOMBRE"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
           </div>
-        </div>
+          <div className="field">
+            <input
+              className="input"
+              type="text"
+              placeholder="APELLIDOS"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              required
+            />
+          </div>
+          <div className="field">
+            <input
+              className="input"
+              type="number"
+              placeholder="NUMERO DE MESA"
+              value={tableNumber}
+              onChange={(e) => setTableNumber(e.target.value)}
+              required
+            />
+          </div>
+          <div className="field">
+            <input
+              className="input"
+              type="email"
+              placeholder="CORREO ELECTRONICO"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="field">
+            <textarea
+              className="textarea"
+              placeholder="COMENTARIO DEL LUGAR"
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+              required
+            ></textarea>
+          </div>
 
-        <div className="control">
-          <button 
-            type="submit" 
-            className="button is-fullwidth"
-            style={{ backgroundColor: '#3DC2EC', color: 'white', fontSize: '16px', fontFamily: 'Roboto', border: 'solid' }}
-          >
-            ENVIAR
-          </button>
-        </div>
-      </form>
+          <div className="field">
+            <label className="rating-title">Calificación</label>
+            <div className="control rating-stars">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <span
+                  key={star}
+                  className={`star ${star <= rating ? 'selected' : ''}`}
+                  onClick={() => handleStarClick(star)}
+                >
+                  ★
+                </span>
+              ))}
+            </div>
+          </div>
 
-      <div className="section">
-        <h3 className="title is-4 has-text-centered" style={{ color: '#C40C0C', fontSize: '24px', fontFamily: 'Roboto', lineHeight: '1.5' }}>Reseñas</h3>
+          <div className="control">
+            <button 
+              type="submit" 
+              className="submit-button"
+            >
+              ENVIAR
+            </button>
+          </div>
+        </form>
+      </div>
+
+      {/* Sección de Reseñas */}
+      <div className="reseñas-container">
+        <h3 className="average-rating">Calificación promedio: {averageRating} ★</h3>
         {reviews.length > 0 ? (
-          <div className="resena-container">
+          <div className="columns is-multiline is-mobile">
             {reviews.map((review, index) => (
-              <div key={index} className="resena">
-                <p style={{ fontSize: '16px', fontFamily: 'Roboto' }}><strong>Nombre:</strong> {review.name} {review.lastName}</p>
-                <p style={{ fontSize: '16px', fontFamily: 'Roboto' }}><strong>Número de Mesa:</strong> {review.tableNumber}</p>
-                <p style={{ fontSize: '16px', fontFamily: 'Roboto' }}><strong>Correo Electrónico:</strong> {review.email}</p>
-                <p style={{ fontSize: '16px', fontFamily: 'Roboto' }}><strong>Comentario:</strong> {review.comment}</p>
-                <p style={{ fontSize: '16px', fontFamily: 'Roboto' }}><strong>Calificación:</strong> {'★'.repeat(review.rating)}</p>
+              <div key={index} className="column is-one-quarter">
+                <div className="resena">
+                  <p><strong>Nombre:</strong> {review.name} {review.lastName}</p>
+                  <p><strong>Número de Mesa:</strong> {review.tableNumber}</p>
+                  <p><strong>Correo Electrónico:</strong> {review.email}</p>
+                  <p><strong>Comentario:</strong> {review.comment}</p>
+                  <p><strong>Calificación:</strong> {'★'.repeat(review.rating)}</p>
+                  <div>
+                    <button 
+                      onClick={() => handleUsefulClick(index)} 
+                      className="useful-button"
+                    >
+                      Útil ({review.usefulCount})
+                    </button>
+                    <button 
+                      onClick={() => handleNotUsefulClick(index)} 
+                      className="not-useful-button"
+                    >
+                      No Útil ({review.notUsefulCount})
+                    </button>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         ) : (
-          <p className="has-text-centered" style={{ fontSize: '14px', fontFamily: 'Roboto', color: 'black' }}>No hay reseñas aún.</p>
+          <p className="has-text-centered">No hay reseñas aún.</p>
         )}
       </div>
     </div>
