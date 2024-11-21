@@ -1,0 +1,141 @@
+/* Fondo dinámico con gradiente animado */
+.welcome-section {
+    background: linear-gradient(135deg, #ffc100, #c40c0c);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  /* Efecto de gradiente animado */
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Texto de bienvenida */
+  .welcome-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .welcome-text span {
+    color: #ffe600;
+    text-shadow: 0 0 10px #ffe600, 0 0 20px #ffe600;
+  }
+  
+  /* Botón de juego */
+  .play-button {
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #ffc100, #e07c00);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: glowButton 2s infinite;
+  }
+  
+  .play-button:hover {
+    background: linear-gradient(45deg, #e07c00, #ffc100);
+    transform: scale(1.1);
+  }
+  
+  @keyframes glowButton {
+    0% {
+      box-shadow: 0 0 10px #ffc100, 0 0 20px #ffc100;
+    }
+    50% {
+      box-shadow: 0 0 20px #e07c00, 0 0 40px #e07c00;
+    }
+    100% {
+      box-shadow: 0 0 10px #ffc100, 0 0 20px #ffc100;
+    }
+  }
+  
+  /* Texto del subtítulo */
+  .welcome-subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .welcome-subtitle .highlight {
+    display: block;
+    margin-top: 10px;
+    color: #ffe600;
+    text-shadow: 0 0 10px #ffe600, 0 0 20px #ffe600;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  /* Adaptación para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .welcome-text {
+      font-size: 2rem;
+    }
+  
+    .play-button {
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+  
+    .welcome-subtitle {
+      font-size: 0.9rem;
+    }
+  
+    .welcome-section {
+      padding: 15px;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 943px) {
+    .container.has-text-centered {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 15px; /* Espaciado entre elementos */
+    }
+  
+    .welcome-text {
+      font-size: 1.8rem; /* Ajusta el tamaño del texto */
+      margin-bottom: 10px;
+    }
+  
+    .play-button {
+      font-size: 1rem; /* Ajusta el tamaño del botón */
+      padding: 10px 20px;
+      margin: 15px 0;
+    }
+  
+    .welcome-subtitle {
+      font-size: 0.9rem; /* Reduce el tamaño del subtítulo */
+      line-height: 1.4; /* Mejora la legibilidad en móviles */
+    }
+  
+    .highlight {
+      font-size: 1rem; /* Ajusta el tamaño del texto destacado */
+      margin-top: 10px;
+    }
+  }
+  

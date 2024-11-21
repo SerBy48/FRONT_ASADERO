@@ -37,7 +37,7 @@ function Navbar() {
           <a onClick={handleClick} href="/productos">Productos</a>
           <a onClick={handleClick} href="/reseñas">Reseñas</a>
           <a onClick={handleClick} href="/reservas">Reservas</a>
-          <a onClick={handleClick} href="/Perfil">Perfil</a>
+          <a onClick={handleClick} href="/Api">Juega y gana!</a>
         </div>
         <div className='burguer'>
           <BurguerButton clicked={clicked} handleClick={handleClick} />
@@ -47,7 +47,7 @@ function Navbar() {
           <a onClick={handleClick} href="/productos">Productos</a>
           <a onClick={handleClick} href="/reseñas">Reseñas</a>
           <a onClick={handleClick} href="/reservas">Reservas</a>
-          <a onClick={handleClick} href="/Perfil">Perfil</a>
+          <a onClick={handleClick} href="/Api">Juega y gana!</a>
         </BgDiv>
       </NavContainer>
     </>
@@ -58,7 +58,7 @@ export default Navbar;
 
 const NavContainer = styled.nav`
   width: 100%;
-  background-color: #C40C0C;
+  background-color: rgb(125,17,17);
   padding: 0;
   display: flex;
   justify-content: space-between;
@@ -69,7 +69,7 @@ const NavContainer = styled.nav`
     padding: 5px;
     display: flex;
     align-items: center;
-    z-index: 2;
+    z-index: 12;
 
     img {
       width: 64px;
@@ -86,10 +86,12 @@ const NavContainer = styled.nav`
       margin: 0;
       display: flex;
       flex-direction: column;
+      -webkit-text-stroke: 1px white;
 
       span {
         color: #ffcf33;
-        font-size: 1.2em;
+        font-size: 1.5em;
+        -webkit-text-stroke: 1px #ffcf33;
       }
     }
   }
@@ -102,7 +104,8 @@ const NavContainer = styled.nav`
       color: white;
       text-decoration: none;
       position: relative;
-      padding: 0px 10px;
+      padding: 0px 20px;
+      margin:0px 10px;
       padding-bottom: 5px;
       transition: color 0.3s ease;
 
@@ -131,7 +134,7 @@ const NavContainer = styled.nav`
     display: none;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 943px) {
     .burguer {
       display: block;
     }
@@ -161,7 +164,7 @@ const BgDiv = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 10;
 
     a {
       color: white;

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Productos from './Productos.jsx'; 
@@ -7,9 +8,13 @@ import polloAsadoP from '../Img/pollo-picante.jpg';
 import polloAsadoH from '../Img/pollo-hierbas.jpg';
 import polloAsadoR from '../Img/pollo-restaurante.jpg';
 import pollo from '../Img/pollo1.jpg';
+=======
+import '../css/Inicio.css'
+>>>>>>> 13842514cc38cf43306fe3103a9e056c1f4062c2
 
 function Inicio() {
   return (
+<<<<<<< HEAD
     <div>
       {/* Bienvenida */}
       <section className="section">
@@ -98,6 +103,10 @@ function Inicio() {
       </section>
     </div>
   );
+=======
+    <div>Este es el inicio d</div>
+  )
+>>>>>>> 13842514cc38cf43306fe3103a9e056c1f4062c2
 }
 
 export default Inicio;
