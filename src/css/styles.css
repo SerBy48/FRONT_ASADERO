@@ -1,83 +1,123 @@
 
+/* Tipografía */
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  background-color: #FFF8DC; /* Fondo amarillo claro */
+  color: #000000; /* Texto principal negro */
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 1rem; /* Texto normal */
+}
+
+.secondary-text {
+  font-size: 14px;
+  color: #FFFFFF; /* Texto secundario */
+}
+
 /* Contenedor principal */
 .container {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-evenly; /* Espacio uniforme entre columnas */
+  align-items: flex-start; /* Alinea las columnas en la parte superior */
+  gap: 30px; /* Espaciado entre columnas */
   margin-top: 20px;
   padding: 20px;
-  background-color: var(--main-bg-color);
+  background-color: #FFD700; /* Fondo amarillo dorado */
+}
+
+/* Ajuste para las columnas */
+.column {
+  flex: 1; /* Cada columna toma el mismo espacio */
+  max-width: 45%; /* Limita el ancho máximo para evitar distorsión */
+  min-width: 300px; /* Define un ancho mínimo */
 }
 
 /* Caja del formulario y mesas */
 .box {
-  background-color: white;
+  background: linear-gradient(135deg, #FFC100, #C40C0C); /* Degradado de amarillo a rojo */
   border-radius: 10px;
-  box-shadow: var(--box-shadow);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 100%;
+  width: 100%; 
+  max-width: 950px;
 }
 
-/* Columnas del formulario y mesas */
-.column.is-half {
-  flex: 1;
+/* Caja de las mesas */
+.mesas-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas para las mesas */
+  gap: 15px; /* Espaciado entre mesas */
+  justify-items: center; /* Centra las mesas horizontalmente */
+  align-items: center; /* Centra las mesas verticalmente */
+  padding: 20px;
+  background: linear-gradient(135deg, #FFC100, #FFEB3B); /* Degradado amarillo */
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajuste del formulario */
+.form-box {
+  padding: 20px;
+  background: linear-gradient(135deg, #FF5722, #FFC107); /* Degradado de rojo a amarillo */
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; /* Tamaño del formulario */
+  display: flex;
+  flex-direction: column; /* Asegura que los elementos estén en columna */
+  gap: 15px; /* Espacio entre los campos del formulario */
 }
 
 /* Títulos */
 .form-title,
+.mesa-title,
 .rating-title {
-  color: var(--primary-color);
+  color: #FFFFFF; /* Texto blanco */
   font-size: 1.8em;
   text-align: center;
   margin-bottom: 20px;
-  font-family: var(--font-family);
+  font-family: 'Roboto', sans-serif;
 }
 
-.mesa-title {
-  color: var(--primary-color);
-  font-size: 1.8em;
-  text-align: center;
-  font-family: var(--font-family);
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-/* Contenedor de la imagen */
-.mesas-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: var(--box-shadow);
-}
-
-/* Ajustar el tamaño de la imagen */
+/* Imagen dentro del contenedor */
 .mesas-image {
   width: 100%;
   height: auto;
-  max-width: 500px;
+  max-width: 100%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 10px; /* Borde redondeado para la imagen */
 }
 
 /* Estrellas de calificación */
 .rating-stars .star {
   font-size: 2rem;
   cursor: pointer;
-  color: #ccc;
-  transition: color 0.3s ease;
+
+  color: #CCCCCC; /* Color inicial gris claro */
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .rating-stars .star:hover,
 .rating-stars .star.selected {
   color: #FFD700; /* Dorado */
+
+  transform: scale(1.2);
 }
 
 /* Botón de enviar */
 .submit-button {
-  background-color: var(--secondary-color);
+  background-color: #3DC2EC; /* Azul vibrante */
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
@@ -89,37 +129,43 @@
   transition: background-color 0.3s ease;
 }
 
-.submit-button:hover {
-  background-color: #2a9fd6;
+.submit-button:hover,
+.submit-button:focus {
+  background-color: #2a9fd6; /* Azul más oscuro */
+  outline: none;
 }
 
 /* Contenedor de reseñas */
 .reseñas-container {
   margin-top: 30px;
   width: 100%;
-  background-color: #FFE4B5;
+
+  background: linear-gradient(135deg, #FFE4B5, #FFC100); /* Degradado suave */
   padding: 20px;
   border-radius: 10px;
-  box-shadow: var(--box-shadow);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Promedio de calificación */
 .average-rating {
-  color: var(--primary-color);
+  color: #FFFFFF; /* Texto blanco */
   font-size: 1.6em;
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
-  font-family: var(--font-family);
+
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Tarjeta de reseña individual */
 .resena {
-  background-color: #fff;
+
+  background: linear-gradient(135deg, #FFFFE0, #FFD700); /* Degradado pastel */
   padding: 15px;
   margin-bottom: 20px;
   border-radius: 10px;
-  box-shadow: var(--box-shadow);
-  font-family: var(--font-family);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
   color: #333;
 }
 
@@ -129,7 +175,6 @@
   font-size: 0.9rem;
   font-weight: bold;
   color: white;
-  background-color: var(--secondary-color);
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
@@ -138,22 +183,29 @@
   margin-right: 5px;
 }
 
+
+.useful-button {
+  background-color: #3DC2EC; /* Azul vibrante */
+}
+
 .useful-button:hover {
-  background-color: #2a9fd6;
+  background-color: #2a9fd6; /* Azul más oscuro */
 }
 
 .not-useful-button {
-  background-color: #FF6347;
+  background-color: #FF6347; /* Rojo tomate */
 }
 
 .not-useful-button:hover {
-  background-color: #FF4500;
+  background-color: #FF4500; /* Rojo más oscuro */
 }
 
 /* Mensaje de éxito */
-.has-text-success {
-  color: green;
+.confirmar {
+  color: rgb(255, 255, 255); /* Rojo */
   font-size: 1.1rem;
   margin-bottom: 15px;
-  font-family: var(--font-family);
+  font-family: 'Roboto', sans-serif;
 }
+
+

@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import '../css/styles.css';
-import mesas from '../Img/mesasreseñas.jpeg';
+import { useState } from "react";
+import "../css/styles.css";
+import mesas from "../Img/mesasreseñas.jpeg";
 
 const Reseñas = () => {
-  const [name, setName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [tableNumber, setTableNumber] = useState('');
-  const [email, setEmail] = useState('');
-  const [comment, setComment] = useState('');
+  const [name, setName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [tableNumber, setTableNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [comment, setComment] = useState("");
   const [rating, setRating] = useState(0);
   const [reviews, setReviews] = useState([]);
   const [successMessage, setSuccessMessage] = useState(false);
@@ -18,13 +18,27 @@ const Reseñas = () => {
       alert("Por favor, elige una calificación de 1 a 5 estrellas.");
       return;
     }
-    const newReview = { name, lastName, tableNumber, email, comment, rating, usefulCount: 0, notUsefulCount: 0 };
+    if (!isValidTableNumber(tableNumber)) {
+      alert("Solo puedes elegir un número de mesa entre 1 y 21.");
+      return;
+    }
+    const newReview = {
+      name,
+      lastName,
+      tableNumber,
+      email,
+      comment,
+      rating,
+      usefulCount: 0,
+      notUsefulCount: 0,
+    };
+
     setReviews([...reviews, newReview]);
-    setName('');
-    setLastName('');
-    setTableNumber('');
-    setEmail('');
-    setComment('');
+    setName("");
+    setLastName("");
+    setTableNumber("");
+    setEmail("");
+    setComment("");
     setRating(0);
     setSuccessMessage(true);
 
@@ -47,7 +61,22 @@ const Reseñas = () => {
     setReviews(updatedReviews);
   };
 
-  const averageRating = reviews.length > 0 ? (reviews.reduce((acc, review) => acc + review.rating, 0) / reviews.length).toFixed(1) : 0;
+  const isValidTableNumber = (value) => {
+    const num = parseInt(value, 10);
+    return !isNaN(num) && num >= 1 && num <= 21;
+  };
+
+  const handleTableNumberChange = (e) => {
+    const value = e.target.value;
+    if (value === "" || isValidTableNumber(value)) {
+      setTableNumber(value);
+    }
+  };
+
+  const averageRating = (
+    reviews.reduce((acc, review) => acc + review.rating, 0) / reviews.length ||
+    0
+  ).toFixed(1);
 
   return (
     <div className="container columns">
@@ -64,8 +93,11 @@ const Reseñas = () => {
         <form onSubmit={handleSubmit} className="box">
           <h3 className="form-title">Deja tu Reseña</h3>
 
-          {successMessage && <p className="has-text-success has-text-centered">¡Reseña enviada con éxito!</p>}
-
+          {successMessage && (
+            <p className="confirmar has-text-centered">
+              ¡Reseña enviada con éxito!
+            </p>
+          )}
           <div className="field">
             <input
               className="input"
@@ -90,9 +122,9 @@ const Reseñas = () => {
             <input
               className="input"
               type="number"
-              placeholder="NUMERO DE MESA"
+              placeholder="NUMERO DE MESA (1-21)"
               value={tableNumber}
-              onChange={(e) => setTableNumber(e.target.value)}
+              onChange={handleTableNumberChange}
               required
             />
           </div>
@@ -122,7 +154,7 @@ const Reseñas = () => {
               {[1, 2, 3, 4, 5].map((star) => (
                 <span
                   key={star}
-                  className={`star ${star <= rating ? 'selected' : ''}`}
+                  className={`star ${star <= rating ? "selected" : ""}`}
                   onClick={() => handleStarClick(star)}
                 >
                   ★
@@ -132,10 +164,7 @@ const Reseñas = () => {
           </div>
 
           <div className="control">
-            <button 
-              type="submit" 
-              className="submit-button"
-            >
+            <button type="submit" className="submit-button">
               ENVIAR
             </button>
           </div>
@@ -144,26 +173,39 @@ const Reseñas = () => {
 
       {/* Sección de Reseñas */}
       <div className="reseñas-container">
-        <h3 className="average-rating">Calificación promedio: {averageRating} ★</h3>
+        <h3 className="average-rating">
+          Calificación promedio: {averageRating} ★
+        </h3>
         {reviews.length > 0 ? (
           <div className="columns is-multiline is-mobile">
             {reviews.map((review, index) => (
               <div key={index} className="column is-one-quarter">
                 <div className="resena">
-                  <p><strong>Nombre:</strong> {review.name} {review.lastName}</p>
-                  <p><strong>Número de Mesa:</strong> {review.tableNumber}</p>
-                  <p><strong>Correo Electrónico:</strong> {review.email}</p>
-                  <p><strong>Comentario:</strong> {review.comment}</p>
-                  <p><strong>Calificación:</strong> {'★'.repeat(review.rating)}</p>
+                  <p>
+                    <strong>Nombre:</strong> {review.name} {review.lastName}
+                  </p>
+                  <p>
+                    <strong>Número de Mesa:</strong> {review.tableNumber}
+                  </p>
+                  <p>
+                    <strong>Correo Electrónico:</strong> {review.email}
+                  </p>
+                  <p>
+                    <strong>Comentario:</strong> {review.comment}
+                  </p>
+                  <p>
+                    <strong>Calificación:</strong> {"★".repeat(review.rating)}
+                  </p>
                   <div>
-                    <button 
-                      onClick={() => handleUsefulClick(index)} 
+                    <button
+                      onClick={() => handleUsefulClick(index)}
                       className="useful-button"
                     >
                       Útil ({review.usefulCount})
                     </button>
-                    <button 
-                      onClick={() => handleNotUsefulClick(index)} 
+
+                    <button
+                      onClick={() => handleNotUsefulClick(index)}
                       className="not-useful-button"
                     >
                       No Útil ({review.notUsefulCount})
