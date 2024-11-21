@@ -1,91 +1,99 @@
 
+.container-reserva {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
 
-/* Contenedor principal */
- .container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    display: flex;
-  }
-  
-  /* Caja de reserva */
- .box {
-    background-color: #ffc100;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  .label{
-    color: #ffc100;
-  }
-  
-  /* Botón */
-  .button.is-primary {
-    background-color: #c40c0c;
-    border-color: #c40c0c;
-    color: white;
-  }
-  
-  .button.is-primary:hover {
-    background-color: #850808;
-    border-color: #850808;
-  }
-  
-  /* Estilo para notificaciones */
-  .notification.is-info {
-    background-color: #e0f7fa;
-    color: #00796b;
-  }
-  
-  .title span{
-    color: #ffc100;
-    font-weight: bold;
-    -webkit-text-stroke: 1px #C40C0C;
-    font-size: 2rem;
-  }
+/* Caja de reserva */
+.box-reserva {
+  margin:10px 20px;
+  background-color: #ffc100;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.label-reserva{
+  color: #ffc100;
+}
 
-  input {
-    color: #fff; /* Texto blanco */
-    background-color: #C40C0C; /* Fondo rojo */
-    border: 1px solid #fff;
-    border-radius: 5px;
-    padding: 10px;
-    transition: border-color 0.3s ease;
-  }
-  
-  /* Hover y focus para todos los inputs */
-  input:hover,
-  input:focus {
-    border-color: #850808;
-    outline: none;
-  }
-  
-  
-  /* Personalización del icono del calendario */
-  input[type="date"]::-webkit-calendar-picker-indicator {
-    color: #fff; /* Asegura que el ícono sea blanco */
-    background: transparent; /* Fondo transparente */
-    filter: invert(1); /* Invierte los colores (útil para íconos oscuros) */
-    cursor: pointer;
-  }
+/* Botón */
+.button-reserva {
+  background-color: #c40c0c;
+  border-color: #c40c0c;
+  color: white;
+}
 
-  /* Responsive styles */
+.button-reserva:hover {
+  background-color: #850808;
+  border-color: #850808;
+}
+
+/* Estilo para notificaciones */
+.notification-reserva {
+  background-color: #e0f7fa;
+  color: #00796b;
+}
+
+.title-reserva span{
+  color: #ffc100;
+  font-weight: bold;
+  -webkit-text-stroke: 1px #C40C0C;
+  font-size: 2rem;
+}
+
+.input-reserva {
+  color: #fff; /* Texto blanco */
+  background-color: #C40C0C; /* Fondo rojo */
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 10px;
+  transition: border-color 0.3s ease;
+}
+
+/* Hover y focus para todos los inputs */
+.input-reserva:hover,
+.input-reserva:focus {
+  border-color: #850808;
+  outline: none;
+}
+
+
+/* Personalización del icono del calendario */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: #fff; /* Asegura que el ícono sea blanco */
+  background: transparent; /* Fondo transparente */
+  filter: invert(1); /* Invierte los colores (útil para íconos oscuros) */
+  cursor: pointer;
+}
+
+/* Responsive styles */
 @media screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
+.container-reserva {
+  flex-direction: column;
+  align-items: center;
+}
 
-  .box {
-    width: 90%;
-  }
+.box-reserva {
+  width: 90%;
+}
 }
 
 @media screen and (min-width: 769px) and (max-width: 1200px) {
-  .box {
-    width: 45%;
-  }
+.box-reserva {
+  width: 45%;
 }
-  
-  
-  
+}
+
+.notification-reserva {
+  background-color: #850808;
+  color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-weight: bold;
+}
