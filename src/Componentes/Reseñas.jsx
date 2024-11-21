@@ -15,10 +15,23 @@ const Reseñas = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (rating === 0) {
-      alert("Por favor, elige una calificación de 1 a 5 estrellas.");
+      alert('Por favor, elige una calificación de 1 a 5 estrellas.');
       return;
     }
-    const newReview = { name, lastName, tableNumber, email, comment, rating, usefulCount: 0, notUsefulCount: 0 };
+    if (!isValidTableNumber(tableNumber)) {
+      alert('Solo puedes elegir un número de mesa entre 1 y 21.');
+      return;
+    }
+    const newReview = {
+      name,
+      lastName,
+      tableNumber,
+      email,
+      comment,
+      rating,
+      usefulCount: 0,
+      notUsefulCount: 0
+    };
     setReviews([...reviews, newReview]);
     setName('');
     setLastName('');
@@ -47,7 +60,21 @@ const Reseñas = () => {
     setReviews(updatedReviews);
   };
 
-  const averageRating = (reviews.reduce((acc, review) => acc + review.rating, 0) / reviews.length).toFixed(1);
+  const isValidTableNumber = (value) => {
+    const num = parseInt(value, 10);
+    return !isNaN(num) && num >= 1 && num <= 21;
+  };
+
+  const handleTableNumberChange = (e) => {
+    const value = e.target.value;
+    if (value === '' || isValidTableNumber(value)) {
+      setTableNumber(value);
+    }
+  };
+
+  const averageRating = (
+    reviews.reduce((acc, review) => acc + review.rating, 0) / reviews.length || 0
+  ).toFixed(1);
 
   return (
     <div className="container columns">
@@ -64,7 +91,7 @@ const Reseñas = () => {
         <form onSubmit={handleSubmit} className="box">
           <h3 className="form-title">Deja tu Reseña</h3>
 
-          {successMessage && <p className="has-text-success has-text-centered">¡Reseña enviada con éxito!</p>}
+          {successMessage && <p className="confirmar has-text-centered">¡Reseña enviada con éxito!</p>}
 
           <div className="field">
             <input
@@ -90,9 +117,9 @@ const Reseñas = () => {
             <input
               className="input"
               type="number"
-              placeholder="NUMERO DE MESA"
+              placeholder="NUMERO DE MESA (1-21)"
               value={tableNumber}
-              onChange={(e) => setTableNumber(e.target.value)}
+              onChange={handleTableNumberChange}
               required
             />
           </div>
@@ -132,10 +159,7 @@ const Reseñas = () => {
           </div>
 
           <div className="control">
-            <button 
-              type="submit" 
-              className="submit-button"
-            >
+            <button type="submit" className="submit-button">
               ENVIAR
             </button>
           </div>
@@ -150,20 +174,30 @@ const Reseñas = () => {
             {reviews.map((review, index) => (
               <div key={index} className="column is-one-quarter">
                 <div className="resena">
-                  <p><strong>Nombre:</strong> {review.name} {review.lastName}</p>
-                  <p><strong>Número de Mesa:</strong> {review.tableNumber}</p>
-                  <p><strong>Correo Electrónico:</strong> {review.email}</p>
-                  <p><strong>Comentario:</strong> {review.comment}</p>
-                  <p><strong>Calificación:</strong> {'★'.repeat(review.rating)}</p>
+                  <p>
+                    <strong>Nombre:</strong> {review.name} {review.lastName}
+                  </p>
+                  <p>
+                    <strong>Número de Mesa:</strong> {review.tableNumber}
+                  </p>
+                  <p>
+                    <strong>Correo Electrónico:</strong> {review.email}
+                  </p>
+                  <p>
+                    <strong>Comentario:</strong> {review.comment}
+                  </p>
+                  <p>
+                    <strong>Calificación:</strong> {'★'.repeat(review.rating)}
+                  </p>
                   <div>
-                    <button 
-                      onClick={() => handleUsefulClick(index)} 
+                    <button
+                      onClick={() => handleUsefulClick(index)}
                       className="useful-button"
                     >
                       Útil ({review.usefulCount})
                     </button>
-                    <button 
-                      onClick={() => handleNotUsefulClick(index)} 
+                    <button
+                      onClick={() => handleNotUsefulClick(index)}
                       className="not-useful-button"
                     >
                       No Útil ({review.notUsefulCount})

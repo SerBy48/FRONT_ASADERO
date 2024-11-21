@@ -1,0 +1,139 @@
+
+
+.card_content{
+    width: 1400px;
+    max-width: calc(100% - 30px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajusta columnas automáticamente */
+    grid-gap: 25px;
+    padding-bottom: 30px;
+}
+
+.section_paginacion{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+
+    .div_paginacion{
+        width: auto;
+        background-color: white;
+        display: flex;
+        border-radius: 8px;
+        overflow: hidden;
+
+        .item_izquierdo{
+            background-color: #FFC100;
+            height: 30px;
+            width: 30px;
+            color: white;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+        }
+        .item{
+            color: white;
+            height: 30px;
+            width: 40px;
+            display: grid;
+            place-items: center;
+            background-color: #424242;
+            border: 1px solid #FFC100;
+
+        }
+        .item_derecho{
+            background-color: #FFC100;
+            height: 30px;
+            width: 30px;
+            color: white;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+        }
+    }
+}
+
+/* Color por card */
+.bg-green{
+    background: #49d0b0;
+}
+.bg-red{
+    background: #fa6d6b;
+}
+.bg-blue{
+    background: #76befe;
+}
+.bg-yellow{
+    background: #ffd76f;
+}
+.bg-brown{
+    background: #544726c8;
+}
+.bg-purple{
+    background: #9a6fff;
+}
+.bg-black{
+    background: #111;
+}
+.bg-pink{
+    background: #fc6cb4;
+}
+.bg-gray{
+    background: #d3d3d3;
+}
+.bg-white{
+    background: #fff;
+}
+.bg-all{
+    background: #999;
+}
+
+/* Color por tipo */
+.color-fire{
+    background: #ff7402;
+}
+.color-grass{
+    background: #9bcc50;
+}
+.color-steel{
+    background: #9eb7b8;
+}
+.color-water{
+    background: #4592c4;
+}
+.color-psychic{
+    background: #f366b9;
+}
+.color-ground{
+    background: #ab9842;
+}
+.color-ice{
+    background: #51c4e7;
+}
+.color-flying{
+    background: #3dc7ef;
+}
+.color-ghost{
+    background: #4d5b64;
+}
+.color-normal{
+    background: #a4acaf;
+}
+.color-poison{
+    background: #7e0858;
+}
+.color-rock{
+    background: #a38c21;
+}
+.color-fighting{
+    background: #d56723;
+}
+.color-dark{
+    background: #707070;
+}
+.color-bug{
+    background: #729f3f;
+}
+.color-flying{
+    background: #3dc7ef;
+}

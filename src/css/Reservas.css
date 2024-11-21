@@ -13,7 +13,7 @@ body {
     margin: auto;
 }
 
-.box1, .box2 {
+.box1 {
     width: 48%;
     padding: 5px;
     box-sizing: border-box;
@@ -26,13 +26,16 @@ body {
     background-color: #C40C0C;
 }
 
-.box2 {
+/* .box2 {
     background-color: #C40C0C;
     border: 5px solid #fff;
     border-radius: 20px;
-}
+} */
 
 .content {
+    flex-direction: column; /* Coloca los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    text-align: center; /* Centra el texto */
     width: 100%;
     background-color: #FFC100;
     padding: 10px 5px;
@@ -49,7 +52,7 @@ body {
     color: #000;
 }
 
-.box1 h2 span, .box h3 span {
+.box1 h2 span, .box1 h3 span {
     color: #C40C0C;
 }
 
@@ -72,7 +75,7 @@ body {
 /* Botón de acción */
 .btn {
     display: block;
-    padding: 12px 24px;
+    padding: 12px 10px;
     background-color: #C40C0C;
     color: #FFF;
     font-size: 1rem;
@@ -87,8 +90,8 @@ body {
 }
 
 .btn:hover {
-    background-color: #FFC100;
-    color: #C40C0C;
+    background-color: #850808;
+    color: #fff;
     transform: scale(1.05);
     border: #C40C0C solid 3px;
 }
@@ -131,3 +134,86 @@ body {
         text-align: center;
     }
 }
+
+
+
+
+/* Estilos del contenedor principal */
+.box2 {
+    width: 48%;
+    box-sizing: border-box;
+    margin: 5px 5px;
+    font-style: italic;
+    background-color: #FFC100;
+    border: 5px solid #000;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    max-width: 500px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .box2 h2 {
+    color: #000;
+    margin-bottom: 1em;
+    font-size: 40px;
+    margin: 10px 5px;
+  }
+  
+  /* Estilos del formulario */
+  .reservation-form {
+    width: 100%; 
+  }
+  .reservation-form div label{
+    color: #000;
+  }
+  
+  
+  .reservation-form .input {
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 10px;
+    transition: border-color 0.3s ease;
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .reservation-form .input:hover,
+  .reservation-form .input:focus {
+    border-color: #C40C0C;
+    outline: none;
+  }
+  
+ 
+  .reservation-form .button {
+    width: 100%;
+    padding: 10px;
+    background-color: #C40C0C;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .reservation-form .button:hover {
+    background-color: #850808;
+    cursor: pointer;
+  }
+  
+
+  @media (max-width: 576px) {
+    .box2 {
+      padding: 15px;
+    }
+  
+    .reservation-form .button {
+      font-size: 1em;
+    }
+  }
+  
+
+

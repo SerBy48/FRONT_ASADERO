@@ -1,7 +1,8 @@
+import '../css/Inicio.css'
 
 const inicio = () => {
   return (
-    <div>Este es el inicio</div>
+    <div>Este es el inicio d</div>
   )
 }
 
