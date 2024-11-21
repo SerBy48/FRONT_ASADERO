@@ -8,7 +8,7 @@ import Api_juego from './Componentes/Api/Api_juego'; // Importa el componente de
 import Nav from './Componentes/Nav'
 import Reservas from './Componentes/Reservas'
 import Reseñas from './Componentes/Reseñas'
-import Inicio from './Componentes/Inicio';
+import Inicio from './Componentes/inicio';
 import Productos from './Componentes/Productos';
 import Api from './Componentes/Api';
 import Footer from './Componentes/Footer';

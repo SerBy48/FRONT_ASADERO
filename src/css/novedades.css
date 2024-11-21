@@ -3,17 +3,21 @@ body {
 }
 
 
-.title.has-text-centered {
+.titulo-sección {
   background-color: rgb(125, 17, 17);
   padding: 10px;
   border-radius: 25px;
-  width: 100vw;
+  width: 90vw;
+  text-align: center;
+  color: aliceblue;
+  font-size: 25px;
 }
+
 
 
 /* Estilo para la Seccion Bienvenida y Sobre Nosotros */
 
-.container .columns.is-vcentered.is-vcentered {
+.contenedor-g .columns.is-vcentered {
   background-color: #FFC100;
   border: 10px solid rgb(125, 17, 17);
   padding: '20px';
@@ -21,13 +25,13 @@ body {
   border-radius: 25px;
 }
 
-.column.is-half img {
+
+.column.is-half1 img {
   border: 10px solid rgb(125, 17, 17);
   width: 450px;
   border-radius: 25px;
   margin: 20px;
   margin-left: 70px;
-  margin-right: 500px;
 }
 
 .column.is-half2 img {
@@ -36,35 +40,35 @@ body {
   height: 250px;
   border-radius: 25px;
   margin: 20px;
+  margin-left: 150px;
+}
+
+.contenedor-g .column.is-half1 p {
+  font-size: 20px;
+  color: #221c1c;
+  text-align: center;
   margin-left: 100px;
-  margin-right: 200px;
+  margin-right: 10px;
 }
 
-.container .column.is-half p {
+.contenedor-g .column.is-half2 p {
   font-size: 20px;
   color: #221c1c;
   text-align: center;
-  margin-left: 10px;
-  margin-right: 100px;
-}
-
-.container .column.is-half2 p {
-  font-size: 20px;
-  color: #221c1c;
-  text-align: center;
-  margin-left: 80px;
+  margin-left: 100px;
 }
 
 /* Estilo para los cuadros de novedades */
 
 .novedad-box {
-  width: 100%; /* Hacer que ocupe todo el ancho disponible */
-  max-width: 350px; /* Ancho máximo de los cuadros */
-  margin: 20px auto; /* Centrado horizontal y espacio entre los cuadros */
-  padding: 20px; /* Espaciado interno */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para que se destaquen */
-  border-radius: 10px; /* Bordes redondeados */
-  transition: transform 0.3s ease-in-out; /* Efecto al pasar el mouse */
+  width: 100%; 
+  max-width: 350px;
+  height: auto;
+  margin: 20px auto; 
+  padding: 20px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 25px; 
+  transition: transform 0.3s ease-in-out; 
   background-color: rgb(125, 17, 17);
 }
 
@@ -81,19 +85,25 @@ body {
 }
 
 /* Estilo para el texto dentro del cuadro */
-.novedad-box .content {
+.novedad-box .contenido {
+  background-color: #FFC100;
+  border-radius: 25px;
   padding: 10px 0; 
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.novedad-box .content h3 {
+.novedad-box .contenido h3 {
+  color: aliceblue;
+  font-size: 20px;
+  background-color: rgb(125, 17, 17);
+  border-radius: 25px;
   font-size: 1.2rem; 
   margin-bottom: 10px;
   text-align: center;
 }
 
-.novedad-box .content p {
+.novedad-box .contenido p {
   font-size: 1rem; 
   color: #221c1c; 
   line-height: 1.5;

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Productos from './Productos.jsx'; 
@@ -8,24 +7,20 @@ import polloAsadoP from '../Img/pollo-picante.jpg';
 import polloAsadoH from '../Img/pollo-hierbas.jpg';
 import polloAsadoR from '../Img/pollo-restaurante.jpg';
 import pollo from '../Img/pollo1.jpg';
-=======
-import '../css/Inicio.css'
->>>>>>> 13842514cc38cf43306fe3103a9e056c1f4062c2
 
 function Inicio() {
   return (
-<<<<<<< HEAD
     <div>
       {/* Bienvenida */}
       <section className="section">
-        <div className="container">
-          <h2 className="title has-text-centered">¡Bienvenidos a nuestro restaurante!</h2>
+        <div className="contenedor-g">
+          <h2 className="titulo-sección">¡Bienvenidos a nuestro restaurante!</h2>
           <div className="columns is-vcentered">
-            <div className="column is-half">
+            <div className="column is-half1">
               <img src={polloAsadoR} alt="Imagen bienvenida" className="img-bienvenida" />
             </div>
-            <div className="column is-half">
-              <p className="texto-bienvenida">
+            <div className="column is-half1">
+              <p>
                 En nuestro restaurante, nos enorgullecemos de ofrecer una experiencia culinaria única,
                 donde cada platillo es preparado con ingredientes frescos y de la mejor calidad. ¡Ven y disfruta de
                 nuestra especialidad en pollos asados y mucho más!
@@ -37,8 +32,8 @@ function Inicio() {
 
       {/* Sección de Novedades */}
       <section className="section">
-        <div className="container">
-          <h2 className="title has-text-centered">Novedades del Menú</h2>
+        <div className="contenedor-g">
+          <h2 className="titulo-sección">Novedades del Menú</h2>
 
           <div className="columns is-multiline">
             {/* Cuadro de Novedad 1 */}
@@ -46,7 +41,7 @@ function Inicio() {
               <Link to="/productos">
               <div className="novedad-box">
                 <img src={polloAsadoB} alt="Pollo Asado en Brocheta" />
-                <div className="content">
+                <div className="contenido">
                   <h3>Pollo Asado en Brocheta</h3>
                   <p>Ahora podrás disfrutar de nuestro delicioso pollo asado servido en brocheta. Perfecto para compartir con los que más quieres.</p>
                 </div>
@@ -59,7 +54,7 @@ function Inicio() {
               <Link to="/productos">
               <div className="novedad-box">
                 <img src={polloAsadoH} alt="Pollo Asado con Hierbas" />
-                <div className="content">
+                <div className="contenido">
                   <h3>Pollo Asado con Hierbas</h3>
                   <p>Un clásico reinventado con una mezcla de hierbas frescas que aportan un sabor único y delicioso, para aquellos que buscan un sabor más refinado.</p>
                 </div>
@@ -72,7 +67,7 @@ function Inicio() {
               <Link to="/productos">
               <div className="novedad-box">
                 <img src={polloAsadoP} alt="Pollo Asado Picante" />
-                <div className="content">
+                <div className="contenido">
                   <h3>Pollo Asado Picante</h3>
                   <p>Para los amantes del picante, ahora ofrecemos pollo asado con un toque de salsa picante especial. ¿Te atreves a probarlo?</p>
                 </div>
@@ -85,8 +80,8 @@ function Inicio() {
 
       {/* Sección Sobre Nosotros */}
       <section className="section">
-        <div className="container">
-          <h2 className="title has-text-centered">Sobre nosotros</h2>
+        <div className="contenedor-g">
+          <h2 className="titulo-sección">Sobre nosotros</h2>
           <div className="columns is-vcentered">
             <div className="column is-half2">
               <p>
@@ -103,10 +98,6 @@ function Inicio() {
       </section>
     </div>
   );
-=======
-    <div>Este es el inicio d</div>
-  )
->>>>>>> 13842514cc38cf43306fe3103a9e056c1f4062c2
 }
 
 export default Inicio;
