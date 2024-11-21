@@ -37,7 +37,7 @@ function Navbar() {
           <a onClick={handleClick} href="/productos">Productos</a>
           <a onClick={handleClick} href="/reseñas">Reseñas</a>
           <a onClick={handleClick} href="/reservas">Reservas</a>
-          <a onClick={handleClick} href="/Api">Juega para ganar!</a>
+          <a onClick={handleClick} href="/Api">Juega y gana!</a>
         </div>
         <div className='burguer'>
           <BurguerButton clicked={clicked} handleClick={handleClick} />
@@ -47,7 +47,7 @@ function Navbar() {
           <a onClick={handleClick} href="/productos">Productos</a>
           <a onClick={handleClick} href="/reseñas">Reseñas</a>
           <a onClick={handleClick} href="/reservas">Reservas</a>
-          <a onClick={handleClick} href="/Api">Juega para ganar!</a>
+          <a onClick={handleClick} href="/Api">Juega y gana!</a>
         </BgDiv>
       </NavContainer>
     </>
@@ -86,10 +86,12 @@ const NavContainer = styled.nav`
       margin: 0;
       display: flex;
       flex-direction: column;
+      -webkit-text-stroke: 1px white;
 
       span {
         color: #ffcf33;
-        font-size: 1.2em;
+        font-size: 1.5em;
+        -webkit-text-stroke: 1px #ffcf33;
       }
     }
   }
@@ -132,7 +134,7 @@ const NavContainer = styled.nav`
     display: none;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 943px) {
     .burguer {
       display: block;
     }
