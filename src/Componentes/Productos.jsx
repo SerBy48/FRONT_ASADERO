@@ -1,19 +1,15 @@
-import { useState, useEffect, createContext, useContext } from 'react';
+import { useState, useEffect} from 'react';
 import '../css/productos.css';
 import 'bulma/css/bulma.min.css';
 
-// Crear el contexto
-const CarritoContext = createContext([]);
-
 const Productos = () => {
   const [combos, setCombos] = useState([]);
-  const { agregarAlCarrito } = useContext(CarritoContext);
 
   useEffect(() => {
     const datosDeCombos = [
       {
         id: 1,
-        nombre: 'Pollo asado || apanado',
+        nombre: 'Perso || Planes',
         opciones: [
           {
             descripcion: '1 pollo asado o apanado',
@@ -25,40 +21,60 @@ const Productos = () => {
             precio: 16000,
             detalles: '4 arepas + 1 plátano maduro + 4 papas',
           },
+          {
+            descripcion: '1/4 pollo asado o apanado',
+            precio: 12000,
+            detalles: '2 arepas + 1 plátano maduro + 2 papas',
+          },
+          {
+            descripcion: 'Presa de pollo asado o apanado',
+            precio: 8000,
+            detalles: '1 arepas + 1 plátano maduro + 1 papas',
+          },
         ],
-        color: 'is-warning', // Color de fondo
+        
       },
       {
         id: 2,
-        nombre: 'Combo familiar',
+        nombre: 'Fami || Planes',
         opciones: [
           {
-            descripcion: 'Combo Nimpollo 1',
+            descripcion: 'Combo Ninpollo 1',
             precio: 50000,
             detalles: '1 pollo y 1/2 (asado o apanado), 6 arepas, 2 ensaladas coleslaw, 1 maduro, 6 papas, y 1 gaseosa 1.5 L',
           },
+          {
+            descripcion: 'Combo Ninpollazo',
+            precio: 70000,
+            detalles: '2 pollo y 1/2 (asado o apanado), 8 arepas, 3 ensaladas coleslaw, 2 maduro, 8 papas, y 2 gaseosa 1.5 L',
+          },
+          {
+            descripcion: 'Combo Ninpollota',
+            precio: 90000,
+            detalles: '3 pollo y 1/2 (asado o apanado), 10 arepas, 4 ensaladas coleslaw, 3 maduro, 10 papas, y 3 gaseosa 1.5 L',
+          },
         ],
-        color: 'is-danger', // Color de fondo
+        
       },
     ];
     setCombos(datosDeCombos);
   }, []);
 
   return (
-    <div className="columns is-multiline">
+    <div className="columns is-multiline m-0 p-3">
       {combos.map((combo) => (
-        <div key={combo.id} className="column is-half">
-          <div className={`box has-background-${combo.color}`}>
-            <h3 className="title is-5 has-text-centered">{combo.nombre}</h3>
+        <div key={combo.id} className="column is-half ">
+          <div className="box cajas">
+            <h3 className=" is-2 has-text-centered title">{combo.nombre}</h3>
             {combo.opciones.map((opcion, index) => (
-              <div key={index} className="box has-background-light">
-                <p className="has-text-weight-bold">{opcion.descripcion} - ${opcion.precio}</p>
-                <p>{opcion.detalles}</p>
+              <div key={index} className="box has-background-warning">
+                <p className="has-text-weight-bold has-text-black title is-3">{opcion.descripcion} - ${opcion.precio}</p>
+                <p className='has-text-black'>{opcion.detalles}</p>
                 <button
                   className="button is-primary is-small mt-2"
-                  onClick={() => agregarAlCarrito(opcion)}
+                  onClick={() => console.log("Ud añadió al carrito el producto: "+opcion.descripcion)}
                 >
-                  Agregar al Carrito
+                  Lo quiero!
                 </button>
               </div>
             ))}
@@ -69,7 +85,4 @@ const Productos = () => {
   );
 };
 
-// El resto de los componentes y lógica del carrito
-
 export default Productos;
-

@@ -8,18 +8,25 @@ import Api_juego from './Componentes/Api/Api_juego'; // Importa el componente de
 import Nav from './Componentes/Nav'
 import Reservas from './Componentes/Reservas'
 import Reseñas from './Componentes/Reseñas'
-import Inicio from './Componentes/inicio';
+import Inicio from "./Componentes/Inicio"; // Ruta relativa al componente Inicio
 import Productos from './Componentes/Productos';
 import Api from './Componentes/Api';
 import Footer from './Componentes/Footer';
+import { useEffect } from 'react';
+import { conectarBackend } from './config';
 
 
 
 function App() {
   
+  useEffect(()=>{
+    conectarBackend().then(data => console.log(data))
+  },[])
+
   return (
    <Router>
     <Nav></Nav>
+    
     <Routes>
     <Route path="/" element={<Inicio />} />
         <Route path="/productos" element={<Productos />} />

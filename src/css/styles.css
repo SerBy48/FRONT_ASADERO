@@ -1,0 +1,208 @@
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  background-color: #FFF8DC; /* Fondo amarillo claro */
+  color: #000000; /* Texto principal negro */
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 1rem; /* Texto normal */
+}
+
+.secondary-text {
+  font-size: 14px;
+  color: #FFFFFF; /* Texto secundario */
+}
+
+/* Contenedor principal */
+.container1 {
+  display: flex;
+  flex-direction: column; /* Apila las secciones hacia abajo */
+  align-items: center; /* Centra el contenido horizontalmente */
+  gap: 20px; /* Espaciado entre las secciones */
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #FFD700; /* Fondo amarillo dorado */
+  width: 100%;
+  max-width: 1200px;
+  margin: auto; /* Centra el contenedor principal en la página */
+}
+
+/* Ajustes generales para el contenedor horizontal */
+.horizontal-container {
+  display: flex;
+  justify-content: space-evenly; /* Espacio entre los elementos */
+  align-items: stretch; /* Asegura que ambos elementos tengan la misma altura */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  gap: 30px;
+}
+
+.form-box, .mesas-box {
+  flex: 1; /* Hace que ambos elementos crezcan para ocupar el mismo espacio */
+  max-width: 35%; /* Reduce el ancho máximo */
+  box-sizing: border-box; /* Para asegurarse de que padding y border se incluyan en el ancho total */
+  background: linear-gradient(135deg, #FFC100, #C40C0C); /* Degradado de amarillo a rojo */
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px; /* Reducción del padding */
+  display: flex;
+  flex-direction: column; /* Asegura que los elementos estén en columna */
+  gap: 8px; /* Reducción del espacio entre los elementos */
+}
+
+/* Caja del formulario */
+.form-box {
+  background: linear-gradient(135deg, rgb(125, 17, 17)); /* Degradado de rojo a amarillo */
+}
+
+/* Caja de las mesas */
+.mesas-box {
+  display: flex;
+  flex-direction: column; /* Asegura que los elementos estén en columna */
+  justify-content: center; /* Centra los elementos verticalmente */
+  align-items: center; /* Centra los elementos horizontalmente */
+  background: linear-gradient(135deg, rgb(125, 17, 17)); 
+}
+
+/* Imagen dentro del contenedor de mesas */
+.mesas-image {
+  width: 100%; /* Ajusta el ancho de la imagen al 100% */
+  height: auto; /* Mantiene la relación de aspecto de la imagen */
+  max-width: 100%; /* Evita que la imagen se agrande más allá de su tamaño natural */
+  max-height: 100%; /* Evita que la imagen se agrande demasiado */
+  object-fit: contain; /* Mantiene la imagen contenida dentro del espacio */
+  border-radius: 10px; /* Borde redondeado para la imagen */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave alrededor de la imagen */
+}
+
+/* Títulos */
+.form-title,
+.mesa-title,
+.rating-title {
+  color: #FFFFFF; /* Texto blanco */
+  font-size: 1.6em; /* Reducción del tamaño de fuente */
+  text-align: center;
+  margin-bottom: 15px; /* Reducción del margen inferior */
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Ajuste del formulario */
+.form-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Reducción del espaciado entre campos */
+}
+
+/* Estrellas de calificación */
+.rating-stars .star {
+  font-size: 1.8rem; /* Reducción del tamaño de las estrellas */
+  cursor: pointer;
+  color: #CCCCCC; /* Color inicial gris claro */
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.rating-stars .star:hover,
+.rating-stars .star.selected {
+  color: #FFD700; /* Dorado */
+  transform: scale(1.2);
+}
+
+/* Botón de enviar */
+.submit-button {
+  background-color: #3DC2EC; /* Azul vibrante */
+  color: white;
+  font-size: 1rem; /* Reducción del tamaño de fuente */
+  font-weight: bold;
+  width: 100%;
+  padding: 8px; /* Reducción del padding */
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover,
+.submit-button:focus {
+  background-color: #2a9fd6; /* Azul más oscuro */
+  outline: none;
+}
+
+/* Contenedor de reseñas */
+.reseñas-container {
+  width: 100%;
+  background: linear-gradient(135deg, #FFE4B5, #FFC100); /* Degradado suave */
+  padding: 15px; /* Reducción del padding */
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Promedio de calificación */
+.average-rating {
+  color: #C40C0C; /* Texto blanco */
+  font-size: 1.4em; /* Reducción del tamaño de fuente */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px; /* Reducción del margen inferior */
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Tarjeta de reseña individual */
+.resena {
+  background: linear-gradient(135deg, #FFFFE0, #FFD700); /* Degradado pastel */
+  padding: 10px; /* Reducción del padding */
+  margin-bottom: 15px; /* Reducción del margen inferior */
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+.resena p strong{
+    color: #000000;
+}
+
+/* Botones de útil y no útil */
+.useful-button,
+.not-useful-button {
+  font-size: 0.8rem; /* Reducción del tamaño de fuente */
+  font-weight: bold;
+  color: white;
+  padding: 5px 8px; /* Reducción del padding */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 5px;
+}
+
+.useful-button {
+  background-color: #3DC2EC; /* Azul vibrante */
+}
+
+.useful-button:hover {
+  background-color: #2a9fd6; /* Azul más oscuro */
+}
+
+.not-useful-button {
+  background-color: #FF6347; /* Rojo tomate */
+}
+
+.not-useful-button:hover {
+  background-color: #FF4500; /* Rojo más oscuro */
+}
+
+/* Mensaje de éxito */
+.has-text-success {
+  color: rgb(255, 255, 255); /* Rojo */
+  font-size: 1rem; /* Reducción del tamaño de fuente */
+  margin-bottom: 10px; /* Reducción del margen inferior */
+  font-family: 'Roboto', sans-serif;
+}
