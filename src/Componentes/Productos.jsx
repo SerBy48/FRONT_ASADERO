@@ -71,7 +71,7 @@ const Productos = () => {
                 <p className="has-text-weight-bold has-text-black title is-3">{opcion.descripcion} - ${opcion.precio}</p>
                 <p className='has-text-black'>{opcion.detalles}</p>
                 <button
-                  className="button is-primary is-small mt-2"
+                  className="boton-lo-quiero"
                   onClick={() => console.log("Ud añadió al carrito el producto: "+opcion.descripcion)}
                 >
                   Lo quiero!

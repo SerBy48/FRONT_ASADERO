@@ -1,6 +1,26 @@
 .title.is-5.has-text-centered{
     background-color: #EE4E4E;
 }
+
 .box.cajas{
     background-color: rgb(125, 17, 17) !important;
+}
+
+.boton-lo-quiero {
+  background-color: rgb(125, 17, 17);  
+  color: white;
+  border: none;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: block; 
+  margin: 10px auto 0 auto;  
+  transition: background-color 0.3s ease;
+}
+
+.boton-lo-quiero:hover {
+  background-color: #d62828;  
 }
