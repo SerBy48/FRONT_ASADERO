@@ -38,6 +38,8 @@ function Navbar() {
           <a onClick={handleClick} href="/reseñas">Reseñas</a>
           <a onClick={handleClick} href="/reservas">Reservas</a>
           <a onClick={handleClick} href="/Api">Juega y gana!</a>
+          <a onClick={handleClick} href="/login">Iniciar Sesión</a>
+          <a onClick={handleClick} href="/register">Registrarse</a>
         </div>
         <div className='burguer'>
           <BurguerButton clicked={clicked} handleClick={handleClick} />
@@ -48,6 +50,8 @@ function Navbar() {
           <a onClick={handleClick} href="/reseñas">Reseñas</a>
           <a onClick={handleClick} href="/reservas">Reservas</a>
           <a onClick={handleClick} href="/Api">Juega y gana!</a>
+          <a onClick={handleClick} href="/login">Iniciar Sesión</a>
+          <a onClick={handleClick} href="/register">Registrarse</a>
         </BgDiv>
       </NavContainer>
     </>
@@ -59,38 +63,37 @@ export default Navbar;
 const NavContainer = styled.nav`
   width: 100%;
   background-color: rgb(125,17,17);
-  padding: 0;
+  padding: 0 2em;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
   div:first-child {
-    padding: 5px;
+    padding: 0.5em 0;
     display: flex;
     align-items: center;
-    z-index: 12;
+    gap: 0.5em;
 
     img {
-      width: 64px;
-      height: 64px;
+      width: 56px;
+      height: 56px;
       border-radius: 40%;
       border: 2px solid #ffc100;
-      margin-right: 1em;
-      z-index: 2;
     }
 
     h2 {
       color: white;
-      font-size: 1.5em;
+      font-size: 1.2em;
       margin: 0;
       display: flex;
       flex-direction: column;
+      line-height: 1.2;
       -webkit-text-stroke: 1px white;
 
       span {
         color: #ffcf33;
-        font-size: 1.5em;
+        font-size: 1.2em;
         -webkit-text-stroke: 1px #ffcf33;
       }
     }
@@ -98,15 +101,17 @@ const NavContainer = styled.nav`
 
   .links {
     display: flex;
-    gap: 1.5em;
+    gap: 1em;
 
     a {
       color: white;
       text-decoration: none;
       position: relative;
-      padding: 0px 20px;
-      margin:0px 10px;
+      padding: 0 10px;
+      margin:0px;
       padding-bottom: 5px;
+      font-size: 0.95em;
+      white-space: nowrap;
       transition: color 0.3s ease;
 
       &:hover {
@@ -153,10 +158,10 @@ const BgDiv = styled.div`
   height: 100%;
   z-index: -1;
   transition: all 0.6s ease;
-  display: flex; /* Usar flexbox */
-  flex-direction: column; /* Apilar verticalmente */
-  justify-content: center; /* Centrar verticalmente */
-  align-items: center; /* Centrar horizontalmente */
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
 
   &.active {
     border-radius: 0 0 80% 0;
@@ -170,7 +175,9 @@ const BgDiv = styled.div`
       color: white;
       text-decoration: none;
       position: relative;
-      padding: 10px; /* Ajusta el padding según sea necesario */
+      padding: 10px;
+      font-size: 1.2em
+      white-space: nowrap;
       transition: color 0.3s ease;
 
       &:hover {

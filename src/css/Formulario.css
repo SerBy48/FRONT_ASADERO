@@ -1,0 +1,110 @@
+:root {
+  --form-color-fondo: #8b0000;
+  --form-color-secundario: #ffcc00;
+  --form-color-texto: #EE4E4E;
+  --form-color-input: #ffe599;
+  --form-color-boton: #ffcc00;
+}
+
+/* Estilos base compartidos */
+.formulario-login-container,
+.formulario-registro-container {
+  background-color: var(--form-color-fondo);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  margin: 2rem auto;
+  color: var(--form-color-texto);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.formulario-login-form,
+.formulario-registro-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formulario-login-title,
+.formulario-registro-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--form-color-secundario);
+}
+
+.formulario-login-input,
+.formulario-registro-input {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--form-color-input);
+  font-size: 1rem;
+}
+
+.formulario-login-boton,
+.formulario-registro-boton {
+  padding: 0.8rem;
+  background-color: var(--form-color-boton);
+  color: var(--form-color-texto);
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-login-boton:hover,
+.formulario-registro-boton:hover {
+  background-color: #d40000;
+}
+
+/* 🔽 NUEVOS ESTILOS AGREGADOS 🔽 */
+
+/* Eslogan debajo de la navbar */
+.formulario-login-eslogan-navbar,
+.formulario-registro-eslogan-navbar {
+  text-align: center;
+  color: var(--form-color-secundario);
+  background-color: var(--form-color-fondo);
+  padding: 0.5rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.formulario-login-eslogan-titulo,
+.formulario-registro-eslogan-titulo {
+  color: var(--form-color-secundario);
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Contenedor del input y el botón toggle */
+.formulario-login-password-container,
+.formulario-registro-password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Botón para mostrar/ocultar contraseña */
+.formulario-login-toggle-btn,
+.formulario-registro-toggle-btn {
+  margin-left: 8px;
+  padding: 0.3rem 0.6rem;
+  background-color: #ffc107;
+  color: #8b0000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-login-toggle-btn:hover,
+.formulario-registro-toggle-btn:hover {
+  background-color: #ffdd33;
+}
+
+
