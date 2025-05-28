@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Formulario.css';
+import axios from 'axios';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -23,6 +24,18 @@ const Login = () => {
   const toggleContrasena = () => {
     setMostrarContrasena(!mostrarContrasena);
   };
+
+  const iniciarSesion = async () => {
+  try {
+    const response = await axios.post('http://localhost:8000/api/iniciarSesion', {
+  "correoElectronico": email,
+  "contrasena": password
+});
+  console.log('Usuario inició sesión', response.data);
+  } catch (error) {
+    console.error('Error al registrar usuario:', error.response?.data || error.message);
+  }
+};
 
   return (
     <>
@@ -61,8 +74,7 @@ const Login = () => {
               {mostrarContrasena ? 'Ocultar' : 'Mostrar'}
             </button>
           </div>
-
-          <button type="submit" className="formulario-login-boton">Ingresar</button>
+          <button onClick={iniciarSesion} type="submit" className="formulario-login-boton">Ingresar</button>
         </form>
       </div>
     </>

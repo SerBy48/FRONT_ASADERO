@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Formulario.css';
+import axios from 'axios';
+
 
 const Register = () => {
   const [nombre, setNombre] = useState('');
@@ -25,6 +27,22 @@ const Register = () => {
   const toggleContrasena = () => {
     setMostrarContrasena(!mostrarContrasena);
   };
+
+  const registrarUsuario = async () => {
+  try {
+    const response = await axios.post('http://localhost:8000/api/nuevoCliente', {
+  "nombre": nombre,
+  "numeroCelular": celular,
+  "cedula": cedula,
+  "correoElectronico": email,
+  "contrasena": password
+});
+
+    console.log('Usuario registrado:', response.data);
+  } catch (error) {
+    console.error('Error al registrar usuario:', error.response?.data || error.message);
+  }
+};
 
   return (
     <>
@@ -94,7 +112,7 @@ const Register = () => {
             </button>
           </div>
 
-          <button type="submit" className="formulario-registro-boton">Registrarse</button>
+          <button type="submit" className="formulario-registro-boton" onClick={registrarUsuario}>Registrarse</button>
         </form>
       </div>
     </>
