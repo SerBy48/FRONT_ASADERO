@@ -14,6 +14,7 @@ import Login from './Componentes/Login';
 import Register from './Componentes/Register';
 import Api from './Componentes/Api';
 import Footer from './Componentes/Footer';
+import Notificacion from './Componentes/Notificacion';
 import { useEffect } from 'react';
 import { conectarBackend } from './config';
 
@@ -28,7 +29,7 @@ function App() {
   return (
    <Router>
     <Nav></Nav>
-    
+    <Notificacion />
     <Routes>
     <Route path="/" element={<Inicio />} />
         <Route path="/productos" element={<Productos />} />
