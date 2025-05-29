@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Formulario.css';
+import { mostrarNotificacion } from './Notificacion';
 import axios from 'axios';
 
 const Login = () => {
@@ -9,13 +10,11 @@ const Login = () => {
   const [mostrarContrasena, setMostrarContrasena] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    // Aquí podrías conectar con tu backend para validar credenciales
     if (email && password) {
-      console.log('Inicio de sesión exitoso');
-      navigate('/'); // Redirige al inicio
+      await iniciarSesion();
     } else {
       alert('Por favor, completa todos los campos');
     }
@@ -32,8 +31,11 @@ const Login = () => {
   "contrasena": password
 });
   console.log('Usuario inició sesión', response.data);
+  mostrarNotificacion("Inicio de sesión exitoso", "success");
+  navigate('/');
   } catch (error) {
     console.error('Error al registrar usuario:', error.response?.data || error.message);
+  mostrarNotificacion("Credenciales incorrectas o inválidas", "error");
   }
 };
 
@@ -74,7 +76,7 @@ const Login = () => {
               {mostrarContrasena ? 'Ocultar' : 'Mostrar'}
             </button>
           </div>
-          <button onClick={iniciarSesion} type="submit" className="formulario-login-boton">Ingresar</button>
+          <button type="submit" className="formulario-login-boton">Ingresar</button>
         </form>
       </div>
     </>

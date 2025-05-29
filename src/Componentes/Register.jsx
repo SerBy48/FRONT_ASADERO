@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Formulario.css';
+import { mostrarNotificacion } from './Notificacion';
 import axios from 'axios';
 
 
@@ -13,12 +14,11 @@ const Register = () => {
   const [mostrarContrasena, setMostrarContrasena] = useState(false);
   const navigate = useNavigate();
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
 
     if (nombre && celular && cedula && email && password) {
-      console.log('Registro exitoso');
-      navigate('/Login'); // Redirige al login después de registrarse
+      await registrarUsuario();
     } else {
       alert('Por favor, completa todos los campos');
     }
@@ -39,8 +39,11 @@ const Register = () => {
 });
 
     console.log('Usuario registrado:', response.data);
+    mostrarNotificacion("Registrado con éxito", "success");
+    navigate('/Login');
   } catch (error) {
     console.error('Error al registrar usuario:', error.response?.data || error.message);
+    mostrarNotificacion("Credenciales incorrectas o inválidas", "error");
   }
 };
 
@@ -112,7 +115,7 @@ const Register = () => {
             </button>
           </div>
 
-          <button type="submit" className="formulario-registro-boton" onClick={registrarUsuario}>Registrarse</button>
+          <button type="submit" className="formulario-registro-boton">Registrarse</button>
         </form>
       </div>
     </>

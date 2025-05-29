@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../css/Reservas.css";
 import Reservas_header from "./Reservas_header";
-
+import { mostrarNotificacion } from './Notificacion';
 
 const Reservas = () => {
   const [reservations, setReservations] = useState([]);
@@ -17,7 +17,6 @@ const Reservas = () => {
   const [password, setPassword] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const correctPassword = "Gallito123";
-  const [notification, setNotification] = useState(""); // Estado para la notificación
 
   const handlePasswordSubmit = (e) => {
     e.preventDefault();
@@ -39,19 +38,13 @@ const Reservas = () => {
     e.preventDefault();
     setReservations([...reservations, formData]);
     setFormData({ name: "", people: "", date: "", phone: "", email: "" });
-    setNotification("¡Reserva completada con éxito!"); // Muestra la notificación
-    setTimeout(() => setNotification(""), 3000);
+    mostrarNotificacion("Reserva realizada con éxito", "success");
   };
 
   return (
     <>
       <div>
         <Reservas_header></Reservas_header>
-      </div>
-      <div className="container-reserva-notification">
-        {notification && (
-          <div className="notification-reserva is-success">{notification}</div>
-        )}
       </div>
       <div className="container container-reserva">
         <div className="box box-reserva">
